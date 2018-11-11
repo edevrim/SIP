@@ -1,8 +1,5 @@
 function [x] = idwlt(xa, xb, c, d)
 
-%c = [1/sqrt(2), 1/sqrt(2)]; 
-%d = [1/sqrt(2), -1/sqrt(2)]; %The Haar transform matrix is real and orthogonal: Inv = transpose of it 
-
 a = zeros(1, length(xa)*2 + 1); 
 for n=1:length(a)/2
     a(n*2) = xa(n);  
