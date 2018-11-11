@@ -16,41 +16,6 @@ for k=1:2 * N
     Hp(k) = Lp(2 * N - k + 1) * (-1) ^ (k+1);
 end 
 
-%*****************
-%Joel's conditions 
-% We start by determining the lengths of the signal S and the filter F.
-% sze =size(x,1);
-% if(sze==1)
-%     x=x';
-%     sze=size(x,1);
-% end
-% len=length(Lp);
-% s = x;
-% 
-% % Check some conditions
-% if(rem(log2(sze),1)~=0) 
-%     error('Length of the input signal should be a power of 2');
-% else
-%     s=[s; zeros(2^ceil(log2(sze))-sze,size(s,2))]; %creates mxm matrix 
-%     sze=size(s,1);
-% end
-% if(size(s,2)~=1)%image
-%     if(rem(log2(size(s,2)),1)~=0)
-%         s=[s zeros(size(s,1),2^ceil(log2(size(s,2)))-size(s,2))];
-%     end
-% end
-% if(sze<len)
-%     error('Length of the input signal should at least be as long as the length of the filter');
-% end
-% if(len~=length(Hp))
-%     error('Low-pass and high-pass filter should have the same length');
-% end
-% if(floor(len/2)<(s/2))
-%     error('Filter lengths should be even');
-% end
-
-%*****************
-
 %Building Lpass and hpass matrices 
 
 Lp2 = fliplr(Lp); %to use in matrix in reverse order 
