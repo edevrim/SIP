@@ -19,10 +19,8 @@ for i=1:n
     end
 end
 
-%W2(1,1) = W2(1,1)*-1; 
-%W2(1,2) = W2(1,2)*-1; 
 
-W_final = cat(1,W1,W2); %concated vertically (ust alta) 
+W_final = cat(1,W1,W2); %concated vertically 
 
 for k=1:N 
     img_org = W_final' * Y * W_final;
@@ -30,4 +28,3 @@ for k=1:N
 end
 
 end
-
