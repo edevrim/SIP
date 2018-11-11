@@ -40,7 +40,7 @@ U = fliplr(U); %also flip the vectors as well
 %variation 2 EVD Method
 
 A = U*D^(1/2); %keeps direction eigenvalues
-Z = D^(-1/2)*U'*Xo; %vectors PCs are in this
+Z = D^(-1/2)*U'*Xo; %vectors PCs are in it
 
 end
 
