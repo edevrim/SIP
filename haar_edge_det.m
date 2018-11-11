@@ -4,21 +4,7 @@ function edges = haar_edge_det(image, iter, alpha)
 %iter is number of iterations 
 %alpha is set as 1 in the book
 
-%image = double(foo);
-
 haared = db_lp_hp_img(image,1,iter); %Haar one times - image must be double
-
-% figure
-% title('Edges')
-% subplot(2,2,1);
-% imagesc(image)
-% colormap gray; 
-% axis image
-% 
-% subplot(2,2,2);
-% imagesc(haared)
-% colormap gray; 
-% % axis image
 
 S = haared; %that we work on in threshold I divided
 %Only take values in the V,H,D for S (exclude B)
@@ -90,7 +76,6 @@ end
 %We found the threshold 
 
 %Edge detection 
-%Now edge detecting 
 
 for i=(b_m + 1):m %convert all elements in V, H, and D to 0 if it's under the threshold
     for j=1:n
