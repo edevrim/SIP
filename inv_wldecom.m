@@ -5,7 +5,7 @@ function X = inv_wldecom(Y, N, c, d)
 %N number of decomposition 
 %X Original signal
 
-[row1,len] = size(Y); %be careful rows and columns numbers
+[row1,len] = size(Y); %be careful row and column numbers
 a22 = Y(1 : len/2^N); %initialize
 b22 = Y(len/2^N + 1 : 2*(len/2^N)); %initialize
 
