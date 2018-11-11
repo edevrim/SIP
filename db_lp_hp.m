@@ -63,10 +63,6 @@ for t=0:iter-1 %for each iteration find the matrix and fill the C
     W1D = downsample(W1,2); %Downsampled then merged
     W2D = downsample(W2,2);
     W_final = cat(1,W1D,W2D); %concated vertically (LP - HP)
-
-    %inv_W = inv(W_final); %check
-    %diff1 = inv_W - W_final'; %Works!
-    %I1 = W_final*inv_W; % %Works!
     
     x_deb = (W_final * init); 
     a11 = x_deb(1: length(x_deb)/2);
@@ -76,12 +72,4 @@ for t=0:iter-1 %for each iteration find the matrix and fill the C
 end
 
 C = cat(1, a11, C); 
-
-%check for haar 
-%set N=1
-%[checka, checkb] = dwlt(x, Lp, Hp);
-%check1 = cat(2,checka, checkb); Works!
-
-%check for wldecom 
-%check11 = wldecom(x',3, Lp, Hp); Works!
 end
