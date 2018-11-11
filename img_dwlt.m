@@ -2,7 +2,7 @@
 function haared_img = img_dwlt(x, N) %works for multi Haar as well
 
 %Haar in Images
-% c and d set as in the dwlt but be careful! 
+% c and d set as in the dwlt
 %x is image 
 %N number of decomposition
 
@@ -26,9 +26,6 @@ end
 
 W_final = cat(1,W1,W2); %concated vertically (ust alta) 
 
-%check11 =  W_final * W_final';
-%half_baked =  %W * A * W_transpose
-
 %Iterations! 
 for k=1:N 
     haared_img = W_final * x * W_final';
@@ -36,7 +33,3 @@ for k=1:N
 end
 
 end
-
-
-
-
