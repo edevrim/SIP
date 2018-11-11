@@ -9,9 +9,6 @@
 
 function C = wldecom(x,N,c,d) 
 
-%c = [1/sqrt(2), 1/sqrt(2)]; 
-%d = [1/sqrt(2), -1/sqrt(2)]; 
-
 [a, b] = dwlt(x,c,d); 
 init = a; 
 C = [b];
@@ -23,5 +20,3 @@ for i=1:(N - 1)
 end 
 
 C = [init C]; 
-
-
