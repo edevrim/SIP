@@ -19,46 +19,9 @@ end
 Lp2 = fliplr(Lp); %to use in matrix in reverse order 
 Hp2 = fliplr(Hp); %to use in matrix in reverse order 
 
-%*****************
-% %Joel's conditions 
-% % We start by determining the lengths of the signal S and the filter F.
-% sze =size(C,1);
-% if(sze==1)
-%     C=C';
-%     sze=size(C,1);
-% end
-% len=length(Lp);
-% s = C;
-% 
-% % Check some conditions
-% if(rem(log2(sze),1)~=0) 
-%     error('Length of the input signal should be a power of 2');
-% else
-%     s=[s; zeros(2^ceil(log2(sze))-sze,size(s,2))]; %creates mxm matrix 
-%     sze=size(s,1);
-% end
-% if(size(s,2)~=1)%image
-%     if(rem(log2(size(s,2)),1)~=0)
-%         s=[s zeros(size(s,1),2^ceil(log2(size(s,2)))-size(s,2))];
-%     end
-% end
-% if(sze<len)
-%     error('Length of the input signal should at least be as long as the length of the filter');
-% end
-% if(len~=length(Hp))
-%     error('Low-pass and high-pass filter should have the same length');
-% end
-% if(floor(len/2)<(s/2))
-%     error('Filter lengths should be even');
-% end
-
-%*****************
-
 C=C'; %MAKE IT HORIZONTAL AGAIN
-%initialize
-%a22 = []; %initialize
-%b22 = [];%initialize
-[row1,len] = size(C); %be careful rows and columns numbers
+
+[row1,len] = size(C); %be careful row and column numbers
 
 %iterations 
 for k=1:iter
@@ -110,12 +73,7 @@ for k=1:iter
     W_final = cat(1,W1D,W2D);
     
     W_inv = inv(W_final); %Inverse matrix
-    %W_tra = W_final'; Works!
     
     a22 = (W_inv * x22')'; %make it horizontal again    
 end
-
 end
-
-
-
