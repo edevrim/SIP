@@ -3,9 +3,6 @@ function db_image = db_lp_hp_img(image, N, iter)
 %N is DB type
 %iter is the number of decomposition
 
-%image = double(imageSIP2015);
-%load('ronald.mat'); 
-%image = ronald;
 figure
 subplot(1,2,1);
 imagesc(image)
@@ -101,9 +98,6 @@ end
 W1N1 = downsample(W1N,2); %Downsampled then merged
 W2N2 = downsample(W2N,2);
 W_final_N = cat(1,W1N1,W2N2); %concated vertically (LP - HP)
-
-%check11 = W_final';
-%check1 = inv(W_final);
 
 %iterations
 for t=1:iter
